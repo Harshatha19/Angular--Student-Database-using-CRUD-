@@ -1,0 +1,62 @@
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-4 mt-5">
+      <div class="card">
+        <div class="form-floating mb-3">
+          <h5 class="text-center text-warning">Add student Details</h5>
+          <input type="text" class="form-control" id="firtsname" name="firstname" [(ngModel)]="first_name" placeholder="Enter First Name" >
+          <label for="firtsname">First Name</label>
+        </div>
+        <div class="form-floating">
+          <input type="text" class="form-control" id="lastname" [(ngModel)]="last_name" placeholder=" Enter Last Name">
+          <label for="lastname">Last Name</label>
+        </div>
+        <div class="form-floating">
+          <input type="text" class="form-control" id="email" [(ngModel)]="email" placeholder=" Enter email">
+          <label for="email">Email Address</label>
+        </div>
+        <div class="form-floating">
+          <input type="number" class="form-control" id="Mobile" [(ngModel)]="mobile" placeholder=" Enter Mobile number">
+          <label for="mobile">Mobile number</label>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="addStudent()">Add student</button>
+  </div>
+      </div>
+       <div class="col-md-8 mt-2">
+<h5 class="text-danger">Student List</h5>
+<div class="card p-3">
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      
+        <tr *ngFor="let list of studentList">
+          <td>{{list.first_name}}</td>
+          <td>{{list.last_name}}</td>
+          <td>{{list.email}}</td>
+          <td>{{list.mobile}}</td>
+<td><button class="btn btn-outline-primary" (click)="deleteStudent(list)">Delete</button></td>
+        </tr>
+        
+     
+    </table>
+  </div>
+</div>
+       </div>
+</div>
+</div> <!--first column-->
+
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 mt-5">
+
+    </div>
+  </div>
+</div> -->
